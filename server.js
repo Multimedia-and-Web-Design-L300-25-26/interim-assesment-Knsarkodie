@@ -26,6 +26,11 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/crypto', require('./routes/cryptoRoutes'));
 
+// Root route for verification
+app.get('/', (req, res) => {
+  res.send('Coinbase Clone Backend API is running successfully!');
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
