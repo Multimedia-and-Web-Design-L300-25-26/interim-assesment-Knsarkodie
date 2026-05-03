@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 dotenv.config();
 
 const app = express();
+app.set('trust proxy', 1); // Trust the reverse proxy on Render
 
 // Middleware
 app.use(express.json());
